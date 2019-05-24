@@ -11,4 +11,6 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 
 * Haven't tested widerface yet, but it is in the plan.
 
+(the code is too simple, only for reference 23333)
+
 **Please replace your own inference code (caffe/ncnn/feather .etc) in the source code**

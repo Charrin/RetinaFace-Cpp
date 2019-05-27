@@ -24,3 +24,5 @@ I test on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, resul
 | cpp version | 83.04 | 76.84 | 39.43 |
 
 You can see the two detect results as **results/cpp_detect** and **results/python_detect**. The main cause of the difference in test results is the numerical precision difference between C++ and python.
+
+* I will implement bbox_vote and multi-scale test this week

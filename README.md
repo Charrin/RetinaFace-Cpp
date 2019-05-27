@@ -11,9 +11,10 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 
 (the code is too simple, only for reference 23333)
 
+**Please replace your own inference code (caffe/ncnn/feather .etc) in the source code**
+
 ------
 
-**Please replace your own inference code (caffe/ncnn/feather .etc) in the source code**
 
 ## Update 2019.5.27
 I test on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, results as follows:

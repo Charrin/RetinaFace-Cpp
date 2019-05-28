@@ -18,6 +18,12 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 ## Update 2019.5.28
 I convert R50 mxnet model to caffe model [BaiDuYun](https://pan.baidu.com/s/1By24gkB1a76qJvxsg-gIgQ) | [Google Drive](https://drive.google.com/drive/folders/1hA5x3jCYFdja3PXLl9EcmucipRmVAj3W?usp=sharing)
 
+Because of the GPU memory limited, I set max(width, height) to 1000 and test it on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, results as follows:
+
+| wider val | easy | medium | hard |
+| ------ | ------ | ------ | ------ |
+| python version | 92.25 | 88.86 | 64.02 |
+| cpp version | 91.36 | 87.15 | 62.22 |
 
 ## Update 2019.5.27
 I test on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, results as follows:

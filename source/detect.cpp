@@ -1,5 +1,6 @@
 #include "anchor_generator.h"
-#include "inference.hpp"
+// place your inference header here
+// #include "inference.hpp"
 #include "opencv2/opencv.hpp"
 #include "config.h"
 #include "tools.h"

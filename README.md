@@ -11,7 +11,7 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 
 (the code is too simple, only for reference 23333)
 
-<font color=gray size=72>This is anchor parsing demo, NO INFERENCE, you should replace your own inference header and code (caffe/ncnn/feather .etc) in the source code</font>
+### This is anchor parsing demo, NO INFERENCE, you should replace your own inference header and code (caffe/ncnn/feather .etc) in the source code
 
 
 I create QQ group: 760688309 for communicating
@@ -38,6 +38,12 @@ I test on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, resul
 
 You can see the two detect results as **results/cpp_detect** and **results/python_detect**. The main cause of the difference in test results is the numerical precision difference between C++ and python.
 
+## Time Benchmark
+
+| platform | net | threads 1/2/4(ms) | inference |
+| ------ | ------ | ------ | ------ |
+| snapdragon625 | mnet | - | NCNN |
+| snapdragon835 | mnet | - | NCNN |
 
 ## TODO
 * implement bbox_vote

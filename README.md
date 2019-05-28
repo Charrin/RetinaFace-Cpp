@@ -13,6 +13,8 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 
 **Please replace your own inference code (caffe/ncnn/feather .etc) in the source code**
 
+QQ group: 760688309 for communicating
+
 ------
 
 ## Update 2019.5.28

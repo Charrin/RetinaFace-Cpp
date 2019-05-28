@@ -16,7 +16,7 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 ------
 
 ## Update 2019.5.28
-I convert R50 mxnet model to caffe model [BaiDuYun](https://pan.baidu.com/s/1By24gkB1a76qJvxsg-gIgQ)
+I convert R50 mxnet model to caffe model [BaiDuYun](https://pan.baidu.com/s/1By24gkB1a76qJvxsg-gIgQ) | [Google Drive](https://drive.google.com/drive/folders/1hA5x3jCYFdja3PXLl9EcmucipRmVAj3W?usp=sharing)
 
 
 ## Update 2019.5.27

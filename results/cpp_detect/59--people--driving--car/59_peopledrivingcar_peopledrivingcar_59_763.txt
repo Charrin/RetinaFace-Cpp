@@ -1,0 +1,4 @@
+59--people--driving--car/59_peopledrivingcar_peopledrivingcar_59_763.jpg
+2
+444.785 214.774 52.2996 62.2124 0.994341
+747.398 424.182 66.4949 90.0015 0.993411

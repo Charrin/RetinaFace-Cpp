@@ -1,0 +1,3 @@
+59--people--driving--car/59_peopledrivingcar_peopledrivingcar_59_725.jpg
+1
+700.621704102 51.7326087952 184.11151123 340.780147552 0.99496537447

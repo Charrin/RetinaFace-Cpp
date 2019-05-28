@@ -1,0 +1,4 @@
+26--Soldier_Drilling/26_Soldier_Drilling_Soldiers_Drilling_26_606.jpg
+2
+221.84 79.2387 119.94 160.55 0.996458
+636.303 111.269 132.282 177.286 0.996189

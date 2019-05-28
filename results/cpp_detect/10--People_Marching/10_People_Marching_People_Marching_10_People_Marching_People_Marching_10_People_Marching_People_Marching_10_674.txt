@@ -1,0 +1,6 @@
+10--People_Marching/10_People_Marching_People_Marching_10_People_Marching_People_Marching_10_People_Marching_People_Marching_10_674.jpg
+4
+831.291 400.473 14.4783 16.9646 0.88786
+843.254 285.872 12.3652 16.3454 0.886247
+472.139 473.859 26.4443 30.8719 0.841571
+140.534 469.753 55.2939 62.4489 0.808722

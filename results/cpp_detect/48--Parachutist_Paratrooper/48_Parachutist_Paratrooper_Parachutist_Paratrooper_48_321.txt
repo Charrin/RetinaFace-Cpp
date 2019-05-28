@@ -1,0 +1,5 @@
+48--Parachutist_Paratrooper/48_Parachutist_Paratrooper_Parachutist_Paratrooper_48_321.jpg
+3
+121.143 20.9697 43.4852 55.8231 0.99347
+894.348 29.6192 35.2522 50.6853 0.989049
+350.868 27.2651 31.5771 52.1236 0.929959

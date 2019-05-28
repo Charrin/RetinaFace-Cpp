@@ -1,0 +1,5 @@
+10--People_Marching/10_People_Marching_People_Marching_10_People_Marching_People_Marching_10_People_Marching_People_Marching_10_933.jpg
+3
+540.107 157.696 26.4753 34.3137 0.998089
+110.744 201.374 37.307 49.238 0.988824
+981.848 141.414 21.7687 31.1707 0.962124

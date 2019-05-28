@@ -1,0 +1,4 @@
+59--people--driving--car/59_peopledrivingcar_peopledrivingcar_59_401.jpg
+2
+218.39 256.524 154.21 207.557 0.999069
+395.364 245.621 107.886 143.572 0.998615

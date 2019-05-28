@@ -1,0 +1,4 @@
+9--Press_Conference/9_Press_Conference_Press_Conference_9_345.jpg
+2
+389.416 265.305 227.357 317.374 0.99923
+229.334 432.989 124.936 180.475 0.99249

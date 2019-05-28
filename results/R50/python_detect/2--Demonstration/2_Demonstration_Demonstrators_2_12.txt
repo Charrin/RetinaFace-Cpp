@@ -1,0 +1,3 @@
+2--Demonstration/2_Demonstration_Demonstrators_2_12.jpg
+1
+288.5689375 554.3576875 132.2341875 130.6743125 0.962009131908

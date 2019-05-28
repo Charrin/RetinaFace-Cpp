@@ -1,0 +1,3 @@
+32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_512.jpg
+1
+428.588 84.0322 101.143 134.143 0.997257

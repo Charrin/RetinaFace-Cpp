@@ -15,6 +15,9 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 
 ------
 
+## Update 2019.5.28
+I convert R50 mxnet model to caffe model [BaiDuYun](https://pan.baidu.com/s/1By24gkB1a76qJvxsg-gIgQ)
+
 
 ## Update 2019.5.27
 I test on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, results as follows:

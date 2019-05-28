@@ -11,7 +11,11 @@ I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightfac
 
 (the code is too simple, only for reference 23333)
 
-**Please replace your own inference code (caffe/ncnn/feather .etc) in the source code**
+
+**This is anchor parsing demo, NO INFERENCE**
+=====
+**you should replace your own inference header and code (caffe/ncnn/feather .etc) in the source code**
+=====
 
 I create QQ group: 760688309 for communicating
 

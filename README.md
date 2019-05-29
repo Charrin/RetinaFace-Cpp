@@ -40,6 +40,8 @@ You can see the two detect results as **results/cpp_detect** and **results/pytho
 
 ## Time Benchmark
 
+VGA
+
 | platform | net | threads 1/2/4(ms) | inference |
 | ------ | ------ | ------ | ------ |
 | snapdragon625 | mnet | 418/262/202 | NCNN |

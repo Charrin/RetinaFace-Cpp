@@ -42,7 +42,7 @@ You can see the two detect results as **results/cpp_detect** and **results/pytho
 
 | platform | net | threads 1/2/4(ms) | inference |
 | ------ | ------ | ------ | ------ |
-| snapdragon625 | mnet | - | NCNN |
+| snapdragon625 | mnet | 418/262/202 | NCNN |
 | snapdragon835 | mnet | - | NCNN |
 
 ## TODO

@@ -46,8 +46,8 @@ VGA
 
 | platform | net | threads 1/2/4(ms) | inference |
 | ------ | ------ | ------ | ------ |
-| snapdragon625 | mnet | 418/262/202 | NCNN |
-| snapdragon835 | mnet | - | NCNN |
+| qcom625 | mnet | 418/262/202 | NCNN |
+| qcom835 | mnet | 130.94/-/- by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN |
 
 ## TODO
 * implement bbox_vote

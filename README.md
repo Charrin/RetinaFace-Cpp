@@ -42,7 +42,7 @@ You can see the two detect results as **results/cpp_detect** and **results/pytho
 
 ## Time Benchmark
 
-VGA
+VGA (640x480)
 
 | platform | net | threads 1/2/4(ms) | inference |
 | ------ | ------ | ------ | ------ |

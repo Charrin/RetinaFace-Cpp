@@ -49,7 +49,7 @@ VGA (640x480)
 | qcom625 | mnet | 418/262/202 | NCNN |
 | qcom625 | mnet | 379/244/180 | [NCNN(optmize)](https://github.com/Charrin/RetinaFace-Cpp/issues/3) |
 | qcom835 | mnet | 137.37/82.97/62.79 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN |
-| qcom835 | mnet | 125.10/74.52/75.09 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN |
+| qcom835 | mnet | 125.10/74.52/75.09 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN(optmize) |
 
 
 ## TODO

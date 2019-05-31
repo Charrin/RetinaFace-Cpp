@@ -1,0 +1,3 @@
+45--Balloonist/45_Balloonist_Balloonist_45_160.jpg
+1
+396.598 319.817 160.297 223.408 0.999621

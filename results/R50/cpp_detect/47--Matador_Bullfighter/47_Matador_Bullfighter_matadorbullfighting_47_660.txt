@@ -1,0 +1,4 @@
+47--Matador_Bullfighter/47_Matador_Bullfighter_matadorbullfighting_47_660.jpg
+2
+202.62 794.011 140.618 104.799 0.999782
+483.058 217.183 112.84 128.074 0.99949

@@ -1,0 +1,3 @@
+59--people--driving--car/59_peopledrivingcar_peopledrivingcar_59_725.jpg
+1
+696.823375 54.9802539062 185.5336875 335.489214844 0.999898433685

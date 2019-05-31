@@ -1,0 +1,4 @@
+52--Photographers/52_Photographers_photographertakingphoto_52_666.jpg
+2
+227.14 216.535 347.09 479.823 0.999775
+501.217 312.483 374.445 396.332 0.999249

@@ -1,0 +1,3 @@
+5--Car_Accident/5_Car_Accident_Accident_5_869.jpg
+1
+363.193 173.922 264.224 352.35 0.999415

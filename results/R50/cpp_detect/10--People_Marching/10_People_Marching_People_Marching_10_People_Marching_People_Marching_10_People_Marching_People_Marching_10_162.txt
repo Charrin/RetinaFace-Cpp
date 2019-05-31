@@ -1,0 +1,4 @@
+10--People_Marching/10_People_Marching_People_Marching_10_People_Marching_People_Marching_10_People_Marching_People_Marching_10_162.jpg
+2
+389.887 309.19 24.6599 27.8912 0.996055
+695 283.399 33.674 31.0534 0.948311

@@ -5,8 +5,10 @@
 #include <iostream>
 
 #include "config.h"
-#include "inference_utils.hpp"
 #include "opencv2/opencv.hpp"
+
+// place your inference blob header here
+//#include "inference_utils.hpp"
 
 class CRect2f {
 public:

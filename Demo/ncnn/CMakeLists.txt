@@ -8,6 +8,7 @@ project (retinaface_ncnn)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -qopenmp")
 add_executable(retinaface_ncnn src/anchor_generator.cpp  src/config.cpp  src/detect.cpp  src/tools.cpp 
 src/anchor_generator.h src/config.h src/tools.h)
+
 find_package( OpenCV REQUIRED )
 target_link_libraries( retinaface_ncnn ${OpenCV_LIBS} )
 

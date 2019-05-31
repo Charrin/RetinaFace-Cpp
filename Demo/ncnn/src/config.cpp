@@ -5,8 +5,20 @@ float pixel_std[3] = {1, 1, 1};
 float pixel_scale = 1.0;
 
 
+#if fmc == 2
+
+std::vector<int> _feat_stride_fpn = { 32 ,16 };
+
+std::map<int, AnchorCfg> anchor_cfg = {
+	{ 32, AnchorCfg(std::vector<float>{32,16}, std::vector<float>{1}, 16) },
+	{ 16, AnchorCfg(std::vector<float>{8,4}, std::vector<float>{1}, 16) },
+};
+
+#endif
+
 #if fmc == 3
 std::vector<int> _feat_stride_fpn = {32, 16, 8};
+
 std::map<int, AnchorCfg> anchor_cfg = {
     {32, AnchorCfg(std::vector<float>{32,16}, std::vector<float>{1}, 16)},
     {16, AnchorCfg(std::vector<float>{8,4}, std::vector<float>{1}, 16)},
@@ -14,6 +26,7 @@ std::map<int, AnchorCfg> anchor_cfg = {
 };
 #endif
 
+
 bool dense_anchor = false;
-float cls_threshold = 0.8;
+float cls_threshold = 0.9;
 float nms_threshold = 0.4;

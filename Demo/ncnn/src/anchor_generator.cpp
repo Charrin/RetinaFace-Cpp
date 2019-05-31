@@ -42,32 +42,34 @@ int AnchorGenerator::Init(int stride, const AnchorCfg& cfg, bool dense_anchor) {
 
 	// save as x1,y1,x2,y2
 	if (dense_anchor) {
-		assert(stride % 2 == 0);
+		//assert(stride % 2 == 0);
 		int num = preset_anchors.size();
 		for (int i = 0; i < num; ++i) {
 			CRect2f anchor = preset_anchors[i];
-			preset_anchors.push_back(CRect2f(anchor[0]+int(stride/2),
-									anchor[1]+int(stride/2),
-									anchor[2]+int(stride/2),
-									anchor[3]+int(stride/2)));
+			preset_anchors.push_back(CRect2f(anchor[0]+int(stride>>1),
+									anchor[1]+int(stride>>1),
+									anchor[2]+int(stride>>1),
+									anchor[3]+int(stride>>1)));
 		}
 	}
 
     anchor_stride = stride;
 
 	anchor_num = preset_anchors.size();
+	/*
     for (int i = 0; i < anchor_num; ++i) {
         preset_anchors[i].print();
     }
+	*/
 	return anchor_num;
 }
 
 int AnchorGenerator::FilterAnchor(ncnn::Mat& cls, ncnn::Mat& reg, ncnn::Mat& pts, std::vector<Anchor>& result) {
-    assert(cls.c == anchor_num*2);
-    assert(reg.c == anchor_num*4);
+    //assert(cls.c == anchor_num*2);
+    //assert(reg.c == anchor_num*4);
     int pts_length = 0;
 
-	assert(pts.c % anchor_num == 0);
+	//assert(pts.c % anchor_num == 0);
 	pts_length = pts.c/anchor_num/2;
 
     int w = cls.w;
@@ -97,36 +99,36 @@ int AnchorGenerator::FilterAnchor(ncnn::Mat& cls, ncnn::Mat& reg, ncnn::Mat& pts
             {
 //            	std::cout<< j << i << id<<cls.channel(anchor_num + a)[id]<<",";
             	if (cls.channel(anchor_num + a)[id] >= cls_threshold) {
-                    printf("cls %f\n", cls.channel(anchor_num + a)[id]);
+                    //printf("cls %f\n", cls.channel(anchor_num + a)[id]);
                     CRect2f box(j * anchor_stride + preset_anchors[a][0],
                             i * anchor_stride + preset_anchors[a][1],
                             j * anchor_stride + preset_anchors[a][2],
                             i * anchor_stride + preset_anchors[a][3]);
-                    printf("%f %f %f %f\n", box[0], box[1], box[2], box[3]);
+                    //printf("%f %f %f %f\n", box[0], box[1], box[2], box[3]);
                     CRect2f delta(reg.channel(a*4+0)[id],
                             reg.channel(a*4+1)[id],
                             reg.channel(a*4+2)[id],
                             reg.channel(a*4+3)[id]);
 
                     Anchor res;
-                    res.anchor = cv::Rect_< float >(box[0], box[1], box[2], box[3]);
+                    res.anchor = Rect2f(box[0], box[1], box[2], box[3]);
                     bbox_pred(box, delta, res.finalbox);
-                    printf("bbox pred\n");
+                    //printf("bbox pred\n");
                     res.score = cls.channel(anchor_num + a)[id];
-                    res.center = cv::Point(j,i);
+                    res.center = Point(j,i);
 
-                    printf("center %d %d\n", j, i);
+                    //printf("center %d %d\n", j, i);
 
-                    if (1) {
-                        std::vector<cv::Point2f> pts_delta(pts_length);
+                    //if (1) {
+                        std::vector<Point2f> pts_delta(pts_length);
                         for (int p = 0; p < pts_length; ++p) {
                             pts_delta[p].x = pts.channel(a*pts_length*2+p*2)[id];
                             pts_delta[p].y = pts.channel(a*pts_length*2+p*2+1)[id];
                         }
-                        printf("ready landmark_pred\n");
+                        //printf("ready landmark_pred\n");
                         landmark_pred(box, pts_delta, res.pts);
-                        printf("landmark_pred\n");
-                    }
+                        //printf("landmark_pred\n");
+                    //}
                     result.push_back(res);
                 }
             }
@@ -178,7 +180,7 @@ void AnchorGenerator::_scale_enum(const std::vector<CRect2f>& ratio_anchor, cons
 
 }
 
-void AnchorGenerator::bbox_pred(const CRect2f& anchor, const CRect2f& delta, cv::Rect_< float >& box) {
+void AnchorGenerator::bbox_pred(const CRect2f& anchor, const CRect2f& delta, Rect2f& box) {
 	float w = anchor[2] - anchor[0] + 1;	
 	float h = anchor[3] - anchor[1] + 1;
 	float x_ctr = anchor[0] + 0.5 * (w - 1);
@@ -194,13 +196,13 @@ void AnchorGenerator::bbox_pred(const CRect2f& anchor, const CRect2f& delta, cv:
     float pred_w = std::exp(dw) * w; 
     float pred_h = std::exp(dh) * h;
 
-    box = cv::Rect_< float >(pred_ctr_x - 0.5 * (pred_w - 1.0),
+    box = Rect2f(pred_ctr_x - 0.5 * (pred_w - 1.0),
             pred_ctr_y - 0.5 * (pred_h - 1.0),
             pred_ctr_x + 0.5 * (pred_w - 1.0),
             pred_ctr_y + 0.5 * (pred_h - 1.0));
 }
 
-void AnchorGenerator::landmark_pred(const CRect2f anchor, const std::vector<cv::Point2f>& delta, std::vector<cv::Point2f>& pts) {
+void AnchorGenerator::landmark_pred(const CRect2f anchor, const std::vector<Point2f>& delta, std::vector<Point2f>& pts) {
 	float w = anchor[2] - anchor[0] + 1;	
 	float h = anchor[3] - anchor[1] + 1;
 	float x_ctr = anchor[0] + 0.5 * (w - 1);

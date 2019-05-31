@@ -1,11 +1,100 @@
 #ifndef ANCHOR_GENERTOR
 #define ANCHOR_GENERTOR
 
+#include <algorithm>
 #include <vector>
 #include <iostream>
+#include <cmath>
+#include <string>
+#include <time.h>
+#include <map>
+#include <functional>
+//#include <math.h>
 
 #include "config.h"
-#include "opencv2/opencv.hpp"
+//#include "opencv2/opencv.hpp"
+
+namespace my
+{
+
+    struct Size
+    {
+        Size() : width(0), height(0) {}
+        Size(int _w, int _h) : width(_w), height(_h) {}
+
+        int width;
+        int height;
+    };
+
+    template<typename _Tp>
+    struct Rect_
+    {
+        Rect_() : x(0), y(0), width(0), height(0) {}
+        Rect_(_Tp _x, _Tp _y, _Tp _w, _Tp _h) : x(_x), y(_y), width(_w), height(_h) {}
+
+        _Tp x;
+        _Tp y;
+        _Tp width;
+        _Tp height;
+
+        // area
+        _Tp area() const
+        {
+            return width * height;
+        }
+    };
+
+    template<typename _Tp> static inline Rect_<_Tp>& operator &= (Rect_<_Tp>& a, const Rect_<_Tp>& b)
+    {
+        _Tp x1 = std::max(a.x, b.x), y1 = std::max(a.y, b.y);
+        a.width = std::min(a.x + a.width, b.x + b.width) - x1;
+        a.height = std::min(a.y + a.height, b.y + b.height) - y1;
+        a.x = x1; a.y = y1;
+        if (a.width <= 0 || a.height <= 0)
+            a = Rect_<_Tp>();
+        return a;
+    }
+
+    template<typename _Tp> static inline Rect_<_Tp>& operator |= (Rect_<_Tp>& a, const Rect_<_Tp>& b)
+    {
+        _Tp x1 = std::min(a.x, b.x), y1 = std::min(a.y, b.y);
+        a.width = std::max(a.x + a.width, b.x + b.width) - x1;
+        a.height = std::max(a.y + a.height, b.y + b.height) - y1;
+        a.x = x1; a.y = y1;
+        return a;
+    }
+
+    template<typename _Tp> static inline Rect_<_Tp> operator & (const Rect_<_Tp>& a, const Rect_<_Tp>& b)
+    {
+        Rect_<_Tp> c = a;
+        return c &= b;
+    }
+
+    template<typename _Tp> static inline Rect_<_Tp> operator | (const Rect_<_Tp>& a, const Rect_<_Tp>& b)
+    {
+        Rect_<_Tp> c = a;
+        return c |= b;
+    }
+
+    typedef Rect_<int> Rect;
+    typedef Rect_<float> Rect2f;
+    typedef Rect_<double> Rect2d;
+
+    template<typename _Tp>
+    struct Point_
+    {
+        Point_() : x(0), y(0) {}
+        Point_(_Tp _x, _Tp _y) : x(_x), y(_y) {}
+
+        _Tp x;
+        _Tp y;
+    };
+
+    typedef Point_<int> Point;
+    typedef Point_<float> Point2f;
+}
+
+using namespace my;
 
 class CRect2f {
 public:
@@ -48,7 +137,7 @@ public:
     }
 
     float& operator[](int i) {
-        assert(0 <= i && i <= 4);
+        //assert(0 <= i && i <= 4);
 
         if (i == 0) 
             return finalbox.x;
@@ -61,7 +150,7 @@ public:
     }
 
     float operator[](int i) const {
-        assert(0 <= i && i <= 4);
+        //assert(0 <= i && i <= 4);
 
         if (i == 0) 
             return finalbox.x;
@@ -73,13 +162,13 @@ public:
             return finalbox.height;
     }
 
-    cv::Rect_< float > anchor; // x1,y1,x2,y2
+    Rect2f anchor; // x1,y1,x2,y2
 	float reg[4]; // offset reg
-    cv::Point center; // anchor feat center
+    Point center; // anchor feat center
 	float score; // cls score
-    std::vector<cv::Point2f> pts; // pred pts
+    std::vector<Point2f> pts; // pred pts
 
-    cv::Rect_< float > finalbox; // final box res
+    Rect2f finalbox; // final box res
 
     void print() {
         printf("finalbox %f %f %f %f, score %f\n", finalbox.x, finalbox.y, finalbox.width, finalbox.height, score);
@@ -110,9 +199,9 @@ private:
 
     void _scale_enum(const std::vector<CRect2f>& ratio_anchor, const std::vector<float>& scales, std::vector<CRect2f>& scale_anchors);
 
-    void bbox_pred(const CRect2f& anchor, const CRect2f& delta, cv::Rect_< float >& box);
+    void bbox_pred(const CRect2f& anchor, const CRect2f& delta, Rect2f& box);
 
-    void landmark_pred(const CRect2f anchor, const std::vector<cv::Point2f>& delta, std::vector<cv::Point2f>& pts);
+    void landmark_pred(const CRect2f anchor, const std::vector<Point2f>& delta, std::vector<Point2f>& pts);
 
 	std::vector<std::vector<Anchor>> anchor_planes; // corrspont to channels
 

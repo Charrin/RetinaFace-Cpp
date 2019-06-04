@@ -20,6 +20,26 @@ I create QQ group: 760688309 for communicating
 
 ------
 
+
+## Time Benchmark
+
+VGA (640x480)
+
+**RokidNN vs NCNN**
+![rokidnn_vs_ncnn](rokidnn_ncnn.jpg)
+
+Next week I will provide apk built with NCNN and RokidNN for you to compare.
+
+
+| platform | net | threads 1/2/4(ms) | inference |
+| ------ | ------ | ------ | ------ |
+| qcom625 | mnet | 418/262/202 | NCNN |
+| qcom625 | mnet | 379/244/180 | [NCNN(optmize)](https://github.com/Charrin/RetinaFace-Cpp/issues/3) |
+| qcom835 | mnet | 137.37/82.97/62.79 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN |
+| qcom835 | mnet | 125.10/74.52/75.09 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN(optmize) |
+
+------
+
 ## Update 2019.5.28
 R50:
 Because of the GPU memory limited, I set max(width, height) to 1000 and test it on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, results as follows:
@@ -39,17 +59,6 @@ I test on WiderFace_val set for **SINGLE SCALE, NO MULTI-SCALE, NO FLIP**, resul
 | cpp version | 83.04 | 76.84 | 39.43 |
 
 You can see the two detect results as **results/cpp_detect** and **results/python_detect**. The main cause of the difference in test results is the numerical precision difference between C++ and python.
-
-## Time Benchmark
-
-VGA (640x480)
-
-| platform | net | threads 1/2/4(ms) | inference |
-| ------ | ------ | ------ | ------ |
-| qcom625 | mnet | 418/262/202 | NCNN |
-| qcom625 | mnet | 379/244/180 | [NCNN(optmize)](https://github.com/Charrin/RetinaFace-Cpp/issues/3) |
-| qcom835 | mnet | 137.37/82.97/62.79 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN |
-| qcom835 | mnet | 125.10/74.52/75.09 by [hanson-young](https://github.com/Charrin/RetinaFace-Cpp/issues/3) | NCNN(optmize) |
 
 
 ## TODO

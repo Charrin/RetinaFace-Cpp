@@ -22,7 +22,9 @@ I create QQ group: 760688309 for communicating
 
 ## Update 2019.6.4
 I update time [test tools](./SpeedTest/) for ncnn and rokidnn, only arm64-v8a version (I'm too lazy to compile armeabi-v7a version, if you need, I can update later)
+
 **how to run**
+
 use adb push to device and run
 ./retina_det imagepath modelpath thread_num loop_num
 

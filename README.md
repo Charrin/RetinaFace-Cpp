@@ -20,6 +20,14 @@ I create QQ group: 760688309 for communicating
 
 ------
 
+## Update 2019.6.4
+I update time [test tools](./SpeedTest/) for ncnn and rokidnn, only arm64-v8a version (I'm too lazy to compile armeabi-v7a version, if you need, I can update later)
+**how to run**
+use adb push to device and run
+./retina_det imagepath modelpath thread_num loop_num
+
+It will calculate average time (including input time, forward time and anchor parsing time, nms time)
+the output image is saved as "res.jpg"
 
 ## Time Benchmark
 

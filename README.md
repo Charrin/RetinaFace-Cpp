@@ -3,7 +3,7 @@ RetinaFace detector with C++
 
 [official RetinaFace](https://github.com/deepinsight/insightface/tree/master/RetinaFace)
 
-I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightface/issues/669) (trained by [yangfly](https://github.com/yangfly)) to caffe model
+I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightface/issues/669) (trained by [yangfly](https://github.com/yangfly)) to [caffe model](./convert_models/mnet)
 
 I convert R50 mxnet model to caffe model [BaiDuYun](https://pan.baidu.com/s/1By24gkB1a76qJvxsg-gIgQ) | [Google Drive](https://drive.google.com/drive/folders/1hA5x3jCYFdja3PXLl9EcmucipRmVAj3W?usp=sharing)
 

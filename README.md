@@ -5,7 +5,7 @@ RetinaFace detector with C++
 
 I convert [mobilenet-0.25 mxnet model](https://github.com/deepinsight/insightface/issues/669) (trained by [yangfly](https://github.com/yangfly)) to [caffe model](./convert_models/mnet)
 
-I convert R50 mxnet model to caffe model [BaiDuYun](https://pan.baidu.com/s/1By24gkB1a76qJvxsg-gIgQ) | [Google Drive](https://drive.google.com/drive/folders/1hA5x3jCYFdja3PXLl9EcmucipRmVAj3W?usp=sharing)
+I convert R50 mxnet model to caffe model [BaiDuYun](链接:https://pan.baidu.com/s/1jTZ2fcaIuUiPrzHUH-LWgQ)密码:6evh | [Google Drive](https://drive.google.com/drive/folders/1hA5x3jCYFdja3PXLl9EcmucipRmVAj3W?usp=sharing)
 
 * I have checked the output of the two models be the same.
 
